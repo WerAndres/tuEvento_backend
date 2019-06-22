@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var jwt = require('jsonwebtoken')
+var registerQueries = require('../queries/registerQueries');
 
 router.post('/', function(req, res, next) {
-    res.send({
-      "message": "OhgfhK"
-    });
+    //console.log('req: ' + JSON.stringify(req.body));
+    registerQueries.createUser(req.body, res);
 });
 
 module.exports = router;
