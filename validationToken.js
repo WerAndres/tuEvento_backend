@@ -15,9 +15,7 @@ function validationToken(req, res, next) {
         error: 'Token inválido'
       })
     } else {
-      res.send({
-        message: 'Awwwww yeah!!!!'
-      })
+      next()
     }
   })
 }

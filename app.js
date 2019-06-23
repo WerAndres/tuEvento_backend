@@ -8,7 +8,7 @@ var app = express();
 var validationToken = require('./validationToken')
 var cors = require('cors')
 var loginRouter = require('./routes/login');
-var perfilRouter = require('./routes/perfil');
+var EventRouter = require('./routes/event');
 var registreRouter = require('./routes/register');
 
 // view engine setup
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use('/login', loginRouter);
 app.use('/registro', registreRouter);
-app.use('/perfil', validationToken, perfilRouter);
+app.use('/event', validationToken, EventRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
